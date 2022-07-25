@@ -262,7 +262,7 @@ try:
             if t_now.minute == 30 and t_now.second <= 5: 
                 get_stock_balance()
                 time.sleep(5)
-        if t_sell < t_now < t_exit:  # PM 02:30 ~ PM 02:50 : 일괄 매도
+        if t_sell < t_now < t_exit:  # PM 03:15 ~ PM 03:20 : 일괄 매도
             if soldout == False:
                 stock_dict = get_stock_balance()
                 for sym, qty in stock_dict.items():
@@ -270,7 +270,7 @@ try:
                 soldout = True
                 bought_list = []
                 time.sleep(1)
-        if t_exit < t_now:  # PM 02:51 ~ :프로그램 종료
+        if t_exit < t_now:  # PM 03:20 ~ :프로그램 종료
             send_message("프로그램을 종료합니다.")
             break
 except Exception as e:
